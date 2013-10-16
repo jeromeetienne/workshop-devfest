@@ -58,6 +58,19 @@ yo threejs-boilerplate
 
 <img src="images/yeoman-threejs-boilerplate.png" style="width: 80%;"/>
 
+
+--
+
+### Try Three.js Boilerplate
+
+* Just a bunch of static files 
+
+```
+make server
+```
+
+<img src="images/yeoman-threejs-boilerplate.png" style="width: 80%;"/>
+
 --
 
 ### What is threex ?
@@ -83,7 +96,7 @@ yo threejs-boilerplate
 bower install threex.spaceships
 ```
 
-<img src="images/yeoman-threejs-boilerplate.png" style="width: 80%;"/>
+<img src="images/bower-install-threex-spaceships.png" style="width: 100%;"/>
 
 --
 
