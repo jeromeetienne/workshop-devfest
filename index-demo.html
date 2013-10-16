@@ -74,38 +74,57 @@ require([ 'bower_components/threex.spaceships/package.require.js'
 		}else if( keyboard.pressed('up') ){
 			spaceship.position.y	+= speed * delta;
 		}
+		// handle limits
+		if( spaceship.position.y < -1 ){
+			spaceship.position.y	= -1	
+		}
+		if( spaceship.position.y > +1 ){
+			spaceship.position.y	= +1	
+		}
 	})
 
 	//////////////////////////////////////////////////////////////////////////////////
 	//		get moon model							//
 	//////////////////////////////////////////////////////////////////////////////////
 
-	var moonMesh	= THREEx.Planets.createMoon()
-	moonMesh.scale.multiplyScalar(0.5)
-	moonMesh.position.x	= -4
-	scene.add(moonMesh)
-	
-	updateFcts.push(function(delta, now){
-		// move the moon to the left
-		moonMesh.position.x	+= -1 * delta;
-		// make it warp
-		if( moonMesh.position.x < -3 ){
-			moonMesh.position.x	= 3
-			moonMesh.position.y	= 2 * (Math.random()-0.5)
-		}
-	})
+/**
+ * * add sounds
+ * * add particles for explosion
+ * * add shoots
+ */
 
-	updateFcts.push(function(delta, now){
-		// only if the spaceship is loaded
-		if( spaceship === null )	return
-		// compute distance between spaceship and the moon
-		var distance	= moonMesh.position.distanceTo(spaceship.position)
-		if( distance < 0.5 ){
-			moonMesh.material.color.set('red')
-		}else{
-			moonMesh.material.color.set('white')			
-		}
-	})
+var nMoons	= 4;
+for(var i = 0; i < nMoons; i++){
+	(function(){
+		var moonMesh	= THREEx.Planets.createMoon()
+		moonMesh.scale.multiplyScalar(0.5)
+		moonMesh.position.x	= -4
+		scene.add(moonMesh)
+		
+		updateFcts.push(function(delta, now){
+			// move the moon to the left
+			moonMesh.position.x	+= -1 * delta;
+			// make it warp
+			if( moonMesh.position.x < -3 ){
+				moonMesh.position.x	= 5
+				moonMesh.position.x	+= 5 * (Math.random()-0.5)
+				moonMesh.position.y	= 2 * (Math.random()-0.5)
+			}
+		})
+
+		updateFcts.push(function(delta, now){
+			// only if the spaceship is loaded
+			if( spaceship === null )	return
+			// compute distance between spaceship and the moon
+			var distance	= moonMesh.position.distanceTo(spaceship.position)
+			if( distance < 0.3 ){
+				moonMesh.material.color.set('red')
+			}else{
+				moonMesh.material.color.set('white')			
+			}
+		})		
+	})()
+}
 
 	//////////////////////////////////////////////////////////////////////////////////
 	//		Camera Controls							//
