@@ -8,15 +8,40 @@ output: index.html
 --
 
 # Flying Spaceships 
-## A Game in THREE.js
+## A Mini Game in THREE.js
   
 --
+
+### Meta
+* present more the workshop
+* what we gonna do
+* how we gonna do it
+* 1h15... it gonna be fast 
+* but we can manage :)
+* link all iframe to a viewsource
+* dont worry all in on github
+  * you can redo it at home
+  * [github repo](https://github.com/jeromeetienne/workshop-devfest)
+
+--
+
+### Expected Final Result
+
+<iframe src='http://127.0.0.1:8000/index99.html' width='100%' height='400px'></iframe>
+
+--
+
+### What Is Yeoman ?
+
+* Modern Workflow for WebApps
+* [homepage](http://yeoman.io/)
 
 ### Using Yeoman ?
 
 * Optional
 * Much Faster with it tho
-* and time is limited!
+* Time is limited!
+* **YES**
 
 --
 
@@ -27,6 +52,8 @@ sudo npm install -g yo
 ```
 
 ### Installing three.js Generator
+
+usefull to install three.js boilerplate
 
 ```
 sudo npm install -g generator-threejs-boilerplate
@@ -58,25 +85,19 @@ yo threejs-boilerplate
 
 <img src="images/yeoman-threejs-boilerplate.png" style="width: 80%;"/>
 
-
 --
 
 ### Try Three.js Boilerplate
 
-* Just a bunch of static files 
+```make server``` then goto [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
-```
-make server
-```
-
-<img src="images/yeoman-threejs-boilerplate.png" style="width: 80%;"/>
+<iframe src='http://127.0.0.1:8000/index10-postboilerplate.html' width='100%' height='400px'></iframe>
 
 --
 
-### What is threex ?
+## Cool But Rather empty...
 
-* ultra light extension system for [three.js](http://mrdoob.github.io/three.js/)
-* [threex](http://jeromeetienne.github.io/threex/) on github
+# Let's Add SpaceShips!
 
 --
 
@@ -86,137 +107,400 @@ make server
 * on github: [repo](https://github.com/jeromeetienne/threex.spaceships/) / 
 [demo](http://jeromeetienne.github.io/threex.spaceships/examples/basic.html)
 
-<iframe src='http://jeromeetienne.github.io/threex.spaceships/examples/basic.html' width='640px' height='480px'></iframe>
+<iframe src='http://jeromeetienne.github.io/threex.spaceships/examples/basic.html' width='100%' height='480px'></iframe>
 
 --
 
-### Import threex spaceships
-
-```javascript
-bower install threex.spaceships
-```
-
-<img src="images/bower-install-threex-spaceships.png" style="width: 100%;"/>
-
+# Wait!
+## What is threex ?
 
 --
 
-### include threex spaceships
+### What is threex ?
 
-* using require.js (optional, only for rapidity)
-  * META explain how to include it manually
-  * META do that for all included threex
-* using bower (optional only for rapidity)
-  * META all available on github
-  * META so can use zip or git itself, as you wish
+* ultra light extension system for [three.js](http://mrdoob.github.io/three.js/)
+* [threex](http://jeromeetienne.github.io/threex/) on github
 
+<iframe src='http://jeromeetienne.github.io/threex/' width='100%' height='400px'></iframe>
+
+--
+
+### threex Support modern workflows
+* [bower](http://bower.io/) for package management
+* [require.js](requirejs.org) for dependancies
+* [yeoman](http://yeoman.io) for scaffolding
+
+### All Optional
+* as in **NOT REQUIRED** :)
+* free to use something else if you wish
+* only there for convenience
+
+--
+
+## Back To SpaceShips...
 
 --
 
 ### threex spaceships with bower
 
-```
-bower install threex.spaceships
-```
+```bower install threex.spaceships```
 
-<img src="images/bower-install-threex-spaceships.png" style="width: 100%;"/>
+<img src="images/bower-install-threex.spaceships.png" style="width: 100%;"/>
 
---
+Now it is in ```bower_components/threex.spaceships/```
 
-### threex.planets
-
-* META Why ? what does it provide for us
-  * same for other threex
-* META 
-  * same for other threex
-* META what is it ? from threex page
-* META url for repo + demo
-* META iframe of earth demo
+Rather Easy...
 
 --
 
-### Meta
+### threex modules with require.js
 
-* do the code step by steps
+* Most threex extension support require.js
+* Convention: ```package.require.js``` at project root
+* require this file to load the module
 
-1. run boilerplate
-1. add the stars
-1. add the spaceships
-1. where is it ?
-1. remove the cube
-1. add the moon
-1. why is it black ?
-1. add the lights
-1. ok we got the moon but where is the spaceship ?
-1. put the spaceship in the proper place
-   * rotate it
-   * on the left
-1. nice... how to move the ships
-1. add threex.keyboardstate
-1. add a function in rendering loop
-   * what is a rendering loop
-1. use keyboard to make it move up and down
-1. oh an error... 
-1. lets wait until the spaceship is loaded
-1. lets use keyboard up/down arrow to make it move
-1. duh the spaceship can go out of the screen
-1. lets add limits
-1. nice... well the moon is kinda static.
-1. move the moon
-   * another function in the rendering loop
-1. make it warp
-1. yep too static
-1. make a random y for the moon on warp
-1. well...  cool but the spaceship and the moon
-1. lets have spaceship and moon to collide
-   * simple one based on distance
-   * no time for a explosion effect
-   * lets simply use color
+### Required ?
 
-
--- 
-### Whats next ?
-
-* add sound with web audio api
+* Optional
+* All free to pick another tech if you wish
+* Faster to dev tho
 
 --
 
-### A textual example
+### threex spaceships with require.js
 
-Content can be written in **Markdown!** New lines no longer need two angle brackets.
+Find require.js call in the header and put that
 
-This will be in a separate paragraph.
+    require([ 'bower_components/threex.spaceships/package.require.js'
+            ], function(){
+            // ...     
+    });
+    
+Done... not too hard
+
+--
+
+### Now Let's Use SpaceShips
+
+The code to add
+
+    THREEx.SpaceShips.loadSpaceFighter03(function(object3d){
+      scene.add(object3d)
+    })
+
+And the model is in the scene.
+
+--
+
+## Well almost.. just a wing :)
+
+<iframe src='http://127.0.0.1:8000/index20-spaceship-05-withcube.html' width='100%' height='400px'></iframe>
+
+Lets remove the cube
+
+--
+
+## Better!! 
+
+<iframe src='http://127.0.0.1:8000/index20-spaceship-10-nocube.html' width='100%' height='400px'></iframe>
+
+--
+
+## Grey Background ? Not Too Shabby
+
+# Let's add Stars!
+
+--
+
+## See ?
+
+<iframe src='http://127.0.0.1:8000/index25-stars.html' width='100%' height='400px'></iframe>
+
+--
+
+### How ? with a *environmantal sphere*
+
+* Large Sphere
+* we are at it center
+* we see the inside of it
+* with a proper texture it does the tricks
+
+--
+
+### The Texture
+
+Part of threex.spaceships module
+
+<iframe src='http://127.0.0.1:8000/bower_components/threex.planets/examples/images/galaxy_starfield.png' width='100%' height='400px'></iframe>
+
+--
+
+### The Code
+
+    var geometry  = new THREE.SphereGeometry(90, 32, 32)
+    var url   = 'bower_components/threex.planets/examples/images/galaxy_starfield.png'
+    var material  = new THREE.MeshBasicMaterial({
+      map : THREE.ImageUtils.loadTexture(url),
+      side  : THREE.BackSide
+    })
+    var starSphere  = new THREE.Mesh(geometry, material)
+    scene.add(starSphere)
+
+1. a geometry
+1. a material
+1. then a mesh
+
+--
+
+## So we got a ship in space...
+
+# Where are the Planets ?
+
+--
+
+### Let's add a moon
+
+* available in [threex.planets](https://github.com/jeromeetienne/threex.planets)
+* blog post explaining internals [here](http://learningthreejs.com/blog/2013/09/16/how-to-make-the-earth-in-webgl/)
+* with bower and require.js again
+
+--
+
+### Earth demo
+
+Earth, cloud, atmosphere, stars, moon, shadow
+
+<iframe src='http://jeromeetienne.github.io/threex.planets/examples/earth.html' width='100%' height='400px'></iframe>
+
+--
+
+### All planets 
+
+based on [planetpixelemporium](http://planetpixelemporium.com/planets.html)
+
+<iframe src='http://jeromeetienne.github.io/threex.planets/examples/select.html#Uranus' width='100%' height='400px'></iframe>
+
+--
+
+### threex planets with bower
+
+```bower install threex.planets```
+
+<img src="images/bower-install-threex.planets.png" style="width: 100%;"/>
+
+Now it is in ```bower_components/threex.planets/```
+
+Rather Easy...
+
+--
+
+### threex planets with require.js
+
+Find require.js call in the header and put that
+
+    require([ 'bower_components/threex.planets/package.require.js'
+            ], function(){
+            // ...     
+    });
+    
+Done... not too hard
+
+--
+
+### The Code
+
+    var moonMesh  = THREEx.Planets.createMoon()
+    scene.add(moonMesh) 
+
+--
+
+### The Result
+
+<iframe src='http://127.0.0.1:8000/index30-moon10-nolight.html' width='100%' height='400px'></iframe>
+
+It is there, i promise :)
+
+--
+
+## Why is it black ?
+
+# Let's add some lights
+
+--
+
+### Lights in three.js
+
+* Ambient light
+* Directional light
+* Hemisphere light
+* Point light
+* Spot light
+
+--
+
+### Basic 3 points lighting
+
+* typical [lighting](http://en.wikipedia.org/wiki/Three-point_lighting)
+* so 1 ambient + 2 directional
+* other basic lightings in [threex.basiclighting](https://github.com/jeromeetienne/threex.basiclighting)
+
+--
+
+### The Code
+
+Add a ambient light
+
+    var light = new THREE.AmbientLight( 0x020202 )
+    scene.add( light )
+
+Add a light in front
+
+    var light = new THREE.DirectionalLight('white', 1)
+    light.position.set(0.5, 0.5, 2)
+    scene.add( light )
+
+Add a light behind
+
+    var light = new THREE.DirectionalLight('white', 0.75)
+    light.position.set(-0.5, -0.5, -2)
+    scene.add( light )
 
 
 --
 
-### A list of things
+### The Result
 
-* Item 1
-* Item B
-* Item gamma
+<iframe src='http://127.0.0.1:8000/index30-moon10-withlight.html' width='100%' height='400px'></iframe>
 
-No need for multiple templates!
+better, at least we see the moon :)
 
 --
 
-### Unicode
+## the spaceship disapeared again tho...
 
-* 林花謝了春紅 太匆匆
-* 胭脂淚 留人醉 幾時重
-* Matching Pairs «»‹› “”‘’「」〈〉《》〔〕
-* Greek αβγδ εζηθ ικλμ νξοπ ρςτυ φχψω
-* currency  ¤ $ ¢ € ₠ £ ¥
+# Move Space Ships Away
 
 --
 
-### A code example
+### Put Spaceships On the Left
 
-    // cool looking code
-    var func = function (arg1) {
-        return function (arg2) {
-            return "arg1: " + arg1 + "arg2: " + arg2;
-        };
-    };
+the code to add in model loader callback
 
-    console.log(func(1)(2)); // result is three
+    spaceship.rotateY(Math.PI/2)
+    spaceship.position.x  = -1
+
+<iframe src='http://127.0.0.1:8000/index30-moon15-leftspaceship.html' width='100%' height='400px'></iframe>
+
+--
+
+## Not Bad... Let's move the player now!
+
+# Use keyboard for controls
+
+--
+
+### threex.keyboardstate
+
+* to keep the current state of the keyboard.
+* github [repo](https://github.com/jeromeetienne/threex.keyboardstate/)
+/ [demo](http://jeromeetienne.github.io/threex.keyboardstate/examples/basic.html)
+* blog post explaining internals [here](http://learningthreejs.com/blog/2011/09/12/lets-Make-a-3D-game-keyboard/)
+* with bower and require.js again
+
+### Basic Usage
+    
+    var keyboard  = new THREEx.KeyboardState();
+    if( keyboard.pressed("shift+H") ){
+        console.log('you are pressing shift and H')
+    }
+
+--
+
+### threex keyboardstate with bower
+
+```bower install threex.keyboardstate```
+
+<img src="images/bower-install-threex.keyboardstate.png" style="width: 100%;"/>
+
+--
+
+### threex keyboardstate with require.js
+
+Find require.js call in the header and put that
+
+    require([ 'bower_components/threex.keyboardstate/package.require.js'
+            ], function(){
+            // ...     
+    });
+
+Done... not too hard
+
+--
+
+### Controls Player With Keyboard
+
+The Algo
+
+* add a function in the rendering loop
+* monitor keyboard state
+* move spaceship accordingly
+
+Pitfalls
+
+* async in spaceship loading
+* speed independant of fps
+
+--
+
+### The Code
+
+    // create keyboard instance
+    var keyboard  = new THREEx.KeyboardState();
+    
+    // add function in rendering loop
+    updateFcts.push(function(delta, now){
+
+        // only if the spaceship is loaded
+        if( spaceship === null )  return;
+
+        // set the speed
+        var speed = 1;
+        // only if spaceships is loaded
+        if( keyboard.pressed('down') ){
+            spaceship.position.y  -= speed * delta;
+        }else if( keyboard.pressed('up') ){
+            spaceship.position.y  += speed * delta;
+        }
+
+    })
+
+--
+
+### The Result
+
+<iframe src='http://127.0.0.1:8000/index35-controls10-nolimit.html' width='100%' height='400px'></iframe>
+
+## oops it's going out
+
+--
+
+### Limit SpaceShip Range
+
+Add that in the function
+
+    if( spaceship.position.y < -1 ){
+      spaceship.position.y  = -1  
+    }
+    if( spaceship.position.y > +1 ){
+      spaceship.position.y  = +1  
+    }
+
+Thus player is stopped when it goes too high, or too low
+
+--
+
+### The Result
+
+<iframe src='http://127.0.0.1:8000/index35-controls15-withlimit.html' width='100%' height='400px'></iframe>
+
+

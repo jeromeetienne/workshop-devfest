@@ -232,13 +232,37 @@ pre > code {
 <div id="wrapper">
     <section class="slide"><h1>Flying Spaceships</h1>
 
-<h2>A Game in THREE.js</h2></section>
-    <section class="slide"><h3>Using Yeoman ?</h3>
+<h2>A Mini Game in THREE.js</h2></section>
+    <section class="slide"><h3>Meta</h3>
+
+<ul>
+<li>present more the workshop</li>
+<li>what we gonna do</li>
+<li>how we gonna do it</li>
+<li>1h15... it gonna be fast </li>
+<li>but we can manage :)</li>
+<li>link all iframe to a viewsource</li>
+<li>dont worry all in on github
+<ul><li>you can redo it at home</li>
+<li><a href="https://github.com/jeromeetienne/workshop-devfest">github repo</a></li></ul></li>
+</ul></section>
+    <section class="slide"><h3>Expected Final Result</h3>
+
+<iframe src='http://127.0.0.1:8000/index99.html' width='100%' height='400px'></iframe></section>
+    <section class="slide"><h3>What Is Yeoman ?</h3>
+
+<ul>
+<li>Modern Workflow for WebApps</li>
+<li><a href="http://yeoman.io/">homepage</a></li>
+</ul>
+
+<h3>Using Yeoman ?</h3>
 
 <ul>
 <li>Optional</li>
 <li>Much Faster with it tho</li>
-<li>and time is limited!</li>
+<li>Time is limited!</li>
+<li><strong>YES</strong></li>
 </ul></section>
     <section class="slide"><h3>Installing yeoman</h3>
 
@@ -247,6 +271,8 @@ sudo npm install -g yo
 </code></p>
 
 <h3>Installing three.js Generator</h3>
+
+<p>usefull to install three.js boilerplate</p>
 
 <p><code>
 sudo npm install -g generator-threejs-boilerplate
@@ -273,21 +299,12 @@ yo threejs-boilerplate
 <p><img src="images/yeoman-threejs-boilerplate.png" style="width: 80%;"/></p></section>
     <section class="slide"><h3>Try Three.js Boilerplate</h3>
 
-<ul>
-<li>Just a bunch of static files </li>
-</ul>
+<p><code>make server</code> then goto <a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a></p>
 
-<p><code>
-make server
-</code></p>
+<iframe src='http://127.0.0.1:8000/index10-postboilerplate.html' width='100%' height='400px'></iframe></section>
+    <section class="slide"><h2>Cool But Rather empty...</h2>
 
-<p><img src="images/yeoman-threejs-boilerplate.png" style="width: 80%;"/></p></section>
-    <section class="slide"><h3>What is threex ?</h3>
-
-<ul>
-<li>ultra light extension system for <a href="http://mrdoob.github.io/three.js/">three.js</a></li>
-<li><a href="http://jeromeetienne.github.io/threex/">threex</a> on github</li>
-</ul></section>
+<h1>Let's Add SpaceShips!</h1></section>
     <section class="slide"><h3>threex spaceships</h3>
 
 <ul>
@@ -296,122 +313,325 @@ make server
 <a href="http://jeromeetienne.github.io/threex.spaceships/examples/basic.html">demo</a></li>
 </ul>
 
-<iframe src='http://jeromeetienne.github.io/threex.spaceships/examples/basic.html' width='640px' height='480px'></iframe></section>
-    <section class="slide"><h3>Import threex spaceships</h3>
+<iframe src='http://jeromeetienne.github.io/threex.spaceships/examples/basic.html' width='100%' height='480px'></iframe></section>
+    <section class="slide"><h1>Wait!</h1>
 
-<p><code>javascript
-bower install threex.spaceships
-</code></p>
-
-<p><img src="images/bower-install-threex-spaceships.png" style="width: 100%;"/></p></section>
-    <section class="slide"><h3>include threex spaceships</h3>
+<h2>What is threex ?</h2></section>
+    <section class="slide"><h3>What is threex ?</h3>
 
 <ul>
-<li>using require.js (optional, only for rapidity)
-<ul><li>META explain how to include it manually</li>
-<li>META do that for all included threex</li></ul></li>
-<li>using bower (optional only for rapidity)
-<ul><li>META all available on github</li>
-<li>META so can use zip or git itself, as you wish</li></ul></li>
+<li>ultra light extension system for <a href="http://mrdoob.github.io/three.js/">three.js</a></li>
+<li><a href="http://jeromeetienne.github.io/threex/">threex</a> on github</li>
+</ul>
+
+<iframe src='http://jeromeetienne.github.io/threex/' width='100%' height='400px'></iframe></section>
+    <section class="slide"><h3>threex Support modern workflows</h3>
+
+<ul>
+<li><a href="http://bower.io/">bower</a> for package management</li>
+<li><a href="requirejs.org">require.js</a> for dependancies</li>
+<li><a href="http://yeoman.io">yeoman</a> for scaffolding</li>
+</ul>
+
+<h3>All Optional</h3>
+
+<ul>
+<li>as in <strong>NOT REQUIRED</strong> :)</li>
+<li>free to use something else if you wish</li>
+<li>only there for convenience</li>
 </ul></section>
+    <section class="slide"><h2>Back To SpaceShips...</h2></section>
     <section class="slide"><h3>threex spaceships with bower</h3>
 
-<p><code>
-bower install threex.spaceships
-</code></p>
+<p><code>bower install threex.spaceships</code></p>
 
-<p><img src="images/bower-install-threex-spaceships.png" style="width: 100%;"/></p></section>
-    <section class="slide"><h3>threex.planets</h3>
+<p><img src="images/bower-install-threex.spaceships.png" style="width: 100%;"/></p>
 
-<ul>
-<li>META Why ? what does it provide for us
-<ul><li>same for other threex</li></ul></li>
-<li>META 
-<ul><li>same for other threex</li></ul></li>
-<li>META what is it ? from threex page</li>
-<li>META url for repo + demo</li>
-<li>META iframe of earth demo</li>
-</ul></section>
-    <section class="slide"><h3>Meta</h3>
+<p>Now it is in <code>bower_components/threex.spaceships/</code></p>
+
+<p>Rather Easy...</p></section>
+    <section class="slide"><h3>threex modules with require.js</h3>
 
 <ul>
-<li><p>do the code step by steps</p></li>
-<li><p>run boilerplate</p></li>
-<li>add the stars</li>
-<li>add the spaceships</li>
-<li>where is it ?</li>
-<li>remove the cube</li>
-<li>add the moon</li>
-<li>why is it black ?</li>
-<li>add the lights</li>
-<li>ok we got the moon but where is the spaceship ?</li>
-<li>put the spaceship in the proper place
-<ul><li>rotate it</li>
-<li>on the left</li></ul></li>
-<li>nice... how to move the ships</li>
-<li>add threex.keyboardstate</li>
-<li>add a function in rendering loop
-<ul><li>what is a rendering loop</li></ul></li>
-<li>use keyboard to make it move up and down</li>
-<li>oh an error... </li>
-<li>lets wait until the spaceship is loaded</li>
-<li>lets use keyboard up/down arrow to make it move</li>
-<li>duh the spaceship can go out of the screen</li>
-<li>lets add limits</li>
-<li>nice... well the moon is kinda static.</li>
-<li>move the moon
-<ul><li>another function in the rendering loop</li></ul></li>
-<li>make it warp</li>
-<li>yep too static</li>
-<li>make a random y for the moon on warp</li>
-<li>well...  cool but the spaceship and the moon</li>
-<li>lets have spaceship and moon to collide
-<ul><li>simple one based on distance</li>
-<li>no time for a explosion effect</li>
-<li>lets simply use color</li></ul></li>
+<li>Most threex extension support require.js</li>
+<li>Convention: <code>package.require.js</code> at project root</li>
+<li>require this file to load the module</li>
 </ul>
 
-<p>-- </p>
-
-<h3>Whats next ?</h3>
+<h3>Required ?</h3>
 
 <ul>
-<li>add sound with web audio api</li>
+<li>Optional</li>
+<li>All free to pick another tech if you wish</li>
+<li>Faster to dev tho</li>
 </ul></section>
-    <section class="slide"><h3>A textual example</h3>
+    <section class="slide"><h3>threex spaceships with require.js</h3>
 
-<p>Content can be written in <strong>Markdown!</strong> New lines no longer need two angle brackets.</p>
+<p>Find require.js call in the header and put that</p>
 
-<p>This will be in a separate paragraph.</p></section>
-    <section class="slide"><h3>A list of things</h3>
+<pre><code>require([ 'bower_components/threex.spaceships/package.require.js'
+        ], function(){
+        // ...     
+});
+</code></pre>
+
+<p>Done... not too hard</p></section>
+    <section class="slide"><h3>Now Let's Use SpaceShips</h3>
+
+<p>The code to add</p>
+
+<pre><code>THREEx.SpaceShips.loadSpaceFighter03(function(object3d){
+  scene.add(object3d)
+})
+</code></pre>
+
+<p>And the model is in the scene.</p></section>
+    <section class="slide"><h2>Well almost.. just a wing :)</h2>
+
+<iframe src='http://127.0.0.1:8000/index20-spaceship-05-withcube.html' width='100%' height='400px'></iframe>
+
+<p>Lets remove the cube</p></section>
+    <section class="slide"><h2>Better!!</h2>
+
+<iframe src='http://127.0.0.1:8000/index20-spaceship-10-nocube.html' width='100%' height='400px'></iframe></section>
+    <section class="slide"><h2>Grey Background ? Not Too Shabby</h2>
+
+<h1>Let's add Stars!</h1></section>
+    <section class="slide"><h2>See ?</h2>
+
+<iframe src='http://127.0.0.1:8000/index25-stars.html' width='100%' height='400px'></iframe></section>
+    <section class="slide"><h3>How ? with a <em>environmantal sphere</em></h3>
 
 <ul>
-<li>Item 1</li>
-<li>Item B</li>
-<li>Item gamma</li>
-</ul>
-
-<p>No need for multiple templates!</p></section>
-    <section class="slide"><h3>Unicode</h3>
-
-<ul>
-<li>林花謝了春紅 太匆匆</li>
-<li>胭脂淚 留人醉 幾時重</li>
-<li>Matching Pairs «»‹› “”‘’「」〈〉《》〔〕</li>
-<li>Greek αβγδ εζηθ ικλμ νξοπ ρςτυ φχψω</li>
-<li>currency  ¤ $ ¢ € ₠ £ ¥</li>
+<li>Large Sphere</li>
+<li>we are at it center</li>
+<li>we see the inside of it</li>
+<li>with a proper texture it does the tricks</li>
 </ul></section>
-    <section class="slide"><h3>A code example</h3>
+    <section class="slide"><h3>The Texture</h3>
 
-<pre><code>// cool looking code
-var func = function (arg1) {
-    return function (arg2) {
-        return "arg1: " + arg1 + "arg2: " + arg2;
-    };
-};
+<p>Part of threex.spaceships module</p>
 
-console.log(func(1)(2)); // result is three
+<iframe src='http://127.0.0.1:8000/bower_components/threex.planets/examples/images/galaxy_starfield.png' width='100%' height='400px'></iframe></section>
+    <section class="slide"><h3>The Code</h3>
+
+<pre><code>var geometry  = new THREE.SphereGeometry(90, 32, 32)
+var url   = 'bower_components/threex.planets/examples/images/galaxy_starfield.png'
+var material  = new THREE.MeshBasicMaterial({
+  map : THREE.ImageUtils.loadTexture(url),
+  side  : THREE.BackSide
+})
+var starSphere  = new THREE.Mesh(geometry, material)
+scene.add(starSphere)
+</code></pre>
+
+<ol>
+<li>a geometry</li>
+<li>a material</li>
+<li>then a mesh</li>
+</ol></section>
+    <section class="slide"><h2>So we got a ship in space...</h2>
+
+<h1>Where are the Planets ?</h1></section>
+    <section class="slide"><h3>Let's add a moon</h3>
+
+<ul>
+<li>available in <a href="https://github.com/jeromeetienne/threex.planets">threex.planets</a></li>
+<li>blog post explaining internals <a href="http://learningthreejs.com/blog/2013/09/16/how-to-make-the-earth-in-webgl/">here</a></li>
+<li>with bower and require.js again</li>
+</ul></section>
+    <section class="slide"><h3>Earth demo</h3>
+
+<p>Earth, cloud, atmosphere, stars, moon, shadow</p>
+
+<iframe src='http://jeromeetienne.github.io/threex.planets/examples/earth.html' width='100%' height='400px'></iframe></section>
+    <section class="slide"><h3>All planets</h3>
+
+<p>based on <a href="http://planetpixelemporium.com/planets.html">planetpixelemporium</a></p>
+
+<iframe src='http://jeromeetienne.github.io/threex.planets/examples/select.html#Uranus' width='100%' height='400px'></iframe></section>
+    <section class="slide"><h3>threex planets with bower</h3>
+
+<p><code>bower install threex.planets</code></p>
+
+<p><img src="images/bower-install-threex.planets.png" style="width: 100%;"/></p>
+
+<p>Now it is in <code>bower_components/threex.planets/</code></p>
+
+<p>Rather Easy...</p></section>
+    <section class="slide"><h3>threex planets with require.js</h3>
+
+<p>Find require.js call in the header and put that</p>
+
+<pre><code>require([ 'bower_components/threex.planets/package.require.js'
+        ], function(){
+        // ...     
+});
+</code></pre>
+
+<p>Done... not too hard</p></section>
+    <section class="slide"><h3>The Code</h3>
+
+<pre><code>var moonMesh  = THREEx.Planets.createMoon()
+scene.add(moonMesh)
 </code></pre></section>
+    <section class="slide"><h3>The Result</h3>
+
+<iframe src='http://127.0.0.1:8000/index30-moon10-nolight.html' width='100%' height='400px'></iframe>
+
+<p>It is there, i promise :)</p></section>
+    <section class="slide"><h2>Why is it black ?</h2>
+
+<h1>Let's add some lights</h1></section>
+    <section class="slide"><h3>Lights in three.js</h3>
+
+<ul>
+<li>Ambient light</li>
+<li>Directional light</li>
+<li>Hemisphere light</li>
+<li>Point light</li>
+<li>Spot light</li>
+</ul></section>
+    <section class="slide"><h3>Basic 3 points lighting</h3>
+
+<ul>
+<li>typical <a href="http://en.wikipedia.org/wiki/Three-point_lighting">lighting</a></li>
+<li>so 1 ambient + 2 directional</li>
+<li>other basic lightings in <a href="https://github.com/jeromeetienne/threex.basiclighting">threex.basiclighting</a></li>
+</ul></section>
+    <section class="slide"><h3>The Code</h3>
+
+<p>Add a ambient light</p>
+
+<pre><code>var light = new THREE.AmbientLight( 0x020202 )
+scene.add( light )
+</code></pre>
+
+<p>Add a light in front</p>
+
+<pre><code>var light = new THREE.DirectionalLight('white', 1)
+light.position.set(0.5, 0.5, 2)
+scene.add( light )
+</code></pre>
+
+<p>Add a light behind</p>
+
+<pre><code>var light = new THREE.DirectionalLight('white', 0.75)
+light.position.set(-0.5, -0.5, -2)
+scene.add( light )
+</code></pre></section>
+    <section class="slide"><h3>The Result</h3>
+
+<iframe src='http://127.0.0.1:8000/index30-moon10-withlight.html' width='100%' height='400px'></iframe>
+
+<p>better, at least we see the moon :)</p></section>
+    <section class="slide"><h2>the spaceship disapeared again tho...</h2>
+
+<h1>Move Space Ships Away</h1></section>
+    <section class="slide"><h3>Put Spaceships On the Left</h3>
+
+<p>the code to add in model loader callback</p>
+
+<pre><code>spaceship.rotateY(Math.PI/2)
+spaceship.position.x  = -1
+</code></pre>
+
+<iframe src='http://127.0.0.1:8000/index30-moon15-leftspaceship.html' width='100%' height='400px'></iframe></section>
+    <section class="slide"><h2>Not Bad... Let's move the player now!</h2>
+
+<h1>Use keyboard for controls</h1></section>
+    <section class="slide"><h3>threex.keyboardstate</h3>
+
+<ul>
+<li>to keep the current state of the keyboard.</li>
+<li>github <a href="https://github.com/jeromeetienne/threex.keyboardstate/">repo</a>
+/ <a href="http://jeromeetienne.github.io/threex.keyboardstate/examples/basic.html">demo</a></li>
+<li>blog post explaining internals <a href="http://learningthreejs.com/blog/2011/09/12/lets-Make-a-3D-game-keyboard/">here</a></li>
+<li>with bower and require.js again</li>
+</ul>
+
+<h3>Basic Usage</h3>
+
+<pre><code>var keyboard  = new THREEx.KeyboardState();
+if( keyboard.pressed("shift+H") ){
+    console.log('you are pressing shift and H')
+}
+</code></pre></section>
+    <section class="slide"><h3>threex keyboardstate with bower</h3>
+
+<p><code>bower install threex.keyboardstate</code></p>
+
+<p><img src="images/bower-install-threex.keyboardstate.png" style="width: 100%;"/></p></section>
+    <section class="slide"><h3>threex keyboardstate with require.js</h3>
+
+<p>Find require.js call in the header and put that</p>
+
+<pre><code>require([ 'bower_components/threex.keyboardstate/package.require.js'
+        ], function(){
+        // ...     
+});
+</code></pre>
+
+<p>Done... not too hard</p></section>
+    <section class="slide"><h3>Controls Player With Keyboard</h3>
+
+<p>The Algo</p>
+
+<ul>
+<li>add a function in the rendering loop</li>
+<li>monitor keyboard state</li>
+<li>move spaceship accordingly</li>
+</ul>
+
+<p>Pitfalls</p>
+
+<ul>
+<li>async in spaceship loading</li>
+<li>speed independant of fps</li>
+</ul></section>
+    <section class="slide"><h3>The Code</h3>
+
+<pre><code>// create keyboard instance
+var keyboard  = new THREEx.KeyboardState();
+
+// add function in rendering loop
+updateFcts.push(function(delta, now){
+
+    // only if the spaceship is loaded
+    if( spaceship === null )  return;
+
+    // set the speed
+    var speed = 1;
+    // only if spaceships is loaded
+    if( keyboard.pressed('down') ){
+        spaceship.position.y  -= speed * delta;
+    }else if( keyboard.pressed('up') ){
+        spaceship.position.y  += speed * delta;
+    }
+
+})
+</code></pre></section>
+    <section class="slide"><h3>The Result</h3>
+
+<iframe src='http://127.0.0.1:8000/index35-controls10-nolimit.html' width='100%' height='400px'></iframe>
+
+<h2>oops it's going out</h2></section>
+    <section class="slide"><h3>Limit SpaceShip Range</h3>
+
+<p>Add that in the function</p>
+
+<pre><code>if( spaceship.position.y &lt; -1 ){
+  spaceship.position.y  = -1  
+}
+if( spaceship.position.y &gt; +1 ){
+  spaceship.position.y  = +1  
+}
+</code></pre>
+
+<p>Thus player is stopped when it goes too high, or too low</p></section>
+    <section class="slide"><h3>The Result</h3>
+
+<iframe src='http://127.0.0.1:8000/index35-controls15-withlimit.html' width='100%' height='400px'></iframe></section>
     <section class="slide"><div class="author">
   <h1 class="name">Jerome Etienne</h1>
   <h3 class="twitter">
