@@ -96,7 +96,7 @@ See it at [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
 ### Result
 
-[demo](http://127.0.0.1:8000/step0-00-naked-boilerplate.html)
+[demo](../step0-00-naked-boilerplate.html)
 
 <img src="images/step0-00-naked-boilerplate.png" style="width: 80%;"/>
 
@@ -175,7 +175,7 @@ put that after the scene init
 
 ### Result
 
-[demo](http://127.0.0.1:8000/step1-00-spaceship-cube.html)
+[demo](../step1-00-spaceship-cube.html)
 
 <img src="images/step1-00-spaceship-cube.png" style="width: 80%;"/>
 
@@ -184,7 +184,7 @@ put that after the scene init
 
 ## Almost... Let's remove the cube :)
 
-[demo](http://127.0.0.1:8000/step1-01-naked-spaceship.html)
+[demo](../step1-01-naked-spaceship.html)
 
 <img src="images/step1-01-naked-spaceship.png" style="width: 80%;"/>
 
@@ -274,7 +274,7 @@ Pitfalls
 
 ## Result
 
-[demo](http://127.0.0.1:8000/step2-00-with-keyboard.html)
+[demo](../step2-00-with-keyboard.html)
 
 <img src="images/step1-01-naked-spaceship.png" style="width: 80%;"/>
 
@@ -342,7 +342,7 @@ Done... not too hard
 
 --
 
-### The Result [link](http://127.0.0.1:8000/step3-00-simple-moon.html)
+### The Result [link](../step3-00-simple-moon.html)
 
 
 <img src="images/step3-00-simple-moon.png" style="width: 80%;"/>
@@ -359,7 +359,7 @@ Done... not too hard
     spaceship.rotateY(Math.PI/2)
     spaceship.position.x    = -1
 
-The Result [link](http://127.0.0.1:8000/step3-01-spaceship-away-moon.html)
+The Result [link](../step3-01-spaceship-away-moon.html)
 
 <img src="images/step3-01-spaceship-away-moon.png" style="width: 80%;"/>
 
@@ -391,7 +391,7 @@ Animate the moon and handle limits
 
 --
 
-### The Result [link](http://127.0.0.1:8000/step3-02-moving-moon.html)
+### The Result [link](../step3-02-moving-moon.html)
 
 <img src="images/step3-02-moving-moon.png" style="width: 80%;"/>
 
@@ -449,7 +449,7 @@ a mesh
 
 --
 
-### The Result [link](http://127.0.0.1:8000/step4-00-stars-sphere.html)
+### The Result [link](../step4-00-stars-sphere.html)
 
 <img src="images/step4-00-stars-sphere.png" style="width: 80%;"/>
 
@@ -463,8 +463,8 @@ a mesh
 
 ### Collision for GamePlay
 
-* goal: destroy moons
-* means: going thru the moon destroy it
+* **Goal**: destroy moons
+* **Means**: going thru the moon destroy it
 
 --
 
@@ -483,8 +483,10 @@ a mesh
 ### Code to add
 
     onRenderFcts.push(function(delta, now){
+
         // only if the spaceship is loaded
         if( spaceship === null )    return
+
         // compute distance between spaceship and the moon
         var distance    = moonMesh.position.distanceTo(spaceship.position)
         if( distance < 0.3 ){
@@ -494,7 +496,7 @@ a mesh
 
 --
 
-### The Result [link](http://127.0.0.1:8000/step5-00-collision.html)
+### The Result [link](../step5-00-collision.html)
 
 <img src="images/step5-00-collision.png" style="width: 80%;"/>
 
@@ -572,7 +574,7 @@ now files are in ```bower_components/webaudiox``` as usual
 
 --
 
-### Result [link](http://127.0.0.1:8000/step6-00-explosion.html)
+### Result [link](../step6-00-explosion.html)
 
 <img src="images/step6-00-explosion.png" style="width: 80%;"/>
 
@@ -597,7 +599,7 @@ now files are in ```bower_components/webaudiox``` as usual
 
 --
 
-### Let's look at the result [link](http://127.0.0.1:8000/step99.html)
+### Result [link](../step99.html)
 
 <img src="images/step99.png" style="width: 80%;"/>
 

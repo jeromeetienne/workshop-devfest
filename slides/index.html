@@ -307,7 +307,7 @@ cd flyingspaceship
 <p>See it at <a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a></p></section>
     <section class="slide"><h3>Result</h3>
 
-<p><a href="http://127.0.0.1:8000/step0-00-naked-boilerplate.html">demo</a></p>
+<p><a href="../step0-00-naked-boilerplate.html">demo</a></p>
 
 <p><img src="images/step0-00-naked-boilerplate.png" style="width: 80%;"/></p></section>
     <section class="slide"><h2>That's a start...</h2>
@@ -374,12 +374,12 @@ THREEx.SpaceShips.loadSpaceFighter03(function(object3d){
 </code></pre></section>
     <section class="slide"><h3>Result</h3>
 
-<p><a href="http://127.0.0.1:8000/step1-00-spaceship-cube.html">demo</a></p>
+<p><a href="../step1-00-spaceship-cube.html">demo</a></p>
 
 <p><img src="images/step1-00-spaceship-cube.png" style="width: 80%;"/></p></section>
     <section class="slide"><h2>Almost... Let's remove the cube :)</h2>
 
-<p><a href="http://127.0.0.1:8000/step1-01-naked-spaceship.html">demo</a></p>
+<p><a href="../step1-01-naked-spaceship.html">demo</a></p>
 
 <p><img src="images/step1-01-naked-spaceship.png" style="width: 80%;"/></p></section>
     <section class="slide"><h2>Not Bad... lack of interactivity</h2>
@@ -457,7 +457,7 @@ onRenderFcts.push(function(delta, now){
 </code></pre></section>
     <section class="slide"><h2>Result</h2>
 
-<p><a href="http://127.0.0.1:8000/step2-00-with-keyboard.html">demo</a></p>
+<p><a href="../step2-00-with-keyboard.html">demo</a></p>
 
 <p><img src="images/step1-01-naked-spaceship.png" style="width: 80%;"/></p></section>
     <section class="slide"><h2>What goes well with spaceships ?</h2>
@@ -504,7 +504,7 @@ onRenderFcts.push(function(delta, now){
 <pre><code>var moonMesh  = THREEx.Planets.createMoon()
 scene.add(moonMesh)
 </code></pre></section>
-    <section class="slide"><h3>The Result <a href="http://127.0.0.1:8000/step3-00-simple-moon.html">link</a></h3>
+    <section class="slide"><h3>The Result <a href="../step3-00-simple-moon.html">link</a></h3>
 
 <p><img src="images/step3-00-simple-moon.png" style="width: 80%;"/></p></section>
     <section class="slide"><h2>a bit overcrowded</h2></section>
@@ -515,7 +515,7 @@ spaceship.rotateY(Math.PI/2)
 spaceship.position.x    = -1
 </code></pre>
 
-<p>The Result <a href="http://127.0.0.1:8000/step3-01-spaceship-away-moon.html">link</a></p>
+<p>The Result <a href="../step3-01-spaceship-away-moon.html">link</a></p>
 
 <p><img src="images/step3-01-spaceship-away-moon.png" style="width: 80%;"/></p></section>
     <section class="slide"><h3>Make The Moon Moves</h3>
@@ -540,7 +540,7 @@ resetMoon()
     if( moonMesh.position.x &lt; -3 )  resetMoon()
 })
 </code></pre></section>
-    <section class="slide"><h3>The Result <a href="http://127.0.0.1:8000/step3-02-moving-moon.html">link</a></h3>
+    <section class="slide"><h3>The Result <a href="../step3-02-moving-moon.html">link</a></h3>
 
 <p><img src="images/step3-02-moving-moon.png" style="width: 80%;"/></p></section>
     <section class="slide"><h2>Grey Background ? Not Too Shabby</h2>
@@ -586,7 +586,7 @@ var material  = new THREE.MeshBasicMaterial({
 <pre><code>var starSphere  = new THREE.Mesh(geometry, material)
 scene.add(starSphere)
 </code></pre></section>
-    <section class="slide"><h3>The Result <a href="http://127.0.0.1:8000/step4-00-stars-sphere.html">link</a></h3>
+    <section class="slide"><h3>The Result <a href="../step4-00-stars-sphere.html">link</a></h3>
 
 <p><img src="images/step4-00-stars-sphere.png" style="width: 80%;"/></p></section>
     <section class="slide"><h2>a bit of Game Play</h2>
@@ -595,8 +595,8 @@ scene.add(starSphere)
     <section class="slide"><h3>Collision for GamePlay</h3>
 
 <ul>
-<li>goal: destroy moons</li>
-<li>means: going thru the moon destroy it</li>
+<li><strong>Goal</strong>: destroy moons</li>
+<li><strong>Means</strong>: going thru the moon destroy it</li>
 </ul></section>
     <section class="slide"><h3>Algo</h3>
 
@@ -614,8 +614,10 @@ scene.add(starSphere)
     <section class="slide"><h3>Code to add</h3>
 
 <pre><code>onRenderFcts.push(function(delta, now){
+
     // only if the spaceship is loaded
     if( spaceship === null )    return
+
     // compute distance between spaceship and the moon
     var distance    = moonMesh.position.distanceTo(spaceship.position)
     if( distance &lt; 0.3 ){
@@ -623,7 +625,7 @@ scene.add(starSphere)
     }
 })
 </code></pre></section>
-    <section class="slide"><h3>The Result <a href="http://127.0.0.1:8000/step5-00-collision.html">link</a></h3>
+    <section class="slide"><h3>The Result <a href="../step5-00-collision.html">link</a></h3>
 
 <p><img src="images/step5-00-collision.png" style="width: 80%;"/></p></section>
     <section class="slide"><h2>What about sounds</h2>
@@ -687,7 +689,7 @@ function playExplosionSound(){
         playExplosionSound()
     }
 </code></pre></section>
-    <section class="slide"><h3>Result <a href="http://127.0.0.1:8000/step6-00-explosion.html">link</a></h3>
+    <section class="slide"><h3>Result <a href="../step6-00-explosion.html">link</a></h3>
 
 <p><img src="images/step6-00-explosion.png" style="width: 80%;"/></p></section>
     <section class="slide"><h2>and we are ...</h2>
@@ -704,7 +706,7 @@ function playExplosionSound(){
 </ul>
 
 <h4>not bad!</h4></section>
-    <section class="slide"><h3>Let's look at the result <a href="http://127.0.0.1:8000/step99.html">link</a></h3>
+    <section class="slide"><h3>Result <a href="../step99.html">link</a></h3>
 
 <p><img src="images/step99.png" style="width: 80%;"/></p></section>
     <section class="slide"><h3>not bad for less than 1h</h3>
