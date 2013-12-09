@@ -26,7 +26,7 @@ output: index.html
 
 ### Expect Final Result
 
-[demo](http://127.0.0.1:8000/index99.html)
+[demo](../index99.html)
 
 <img src="images/screenshot-final-result.png" style="width: 80%;"/>
 
@@ -37,8 +37,8 @@ output: index.html
 * threejs boilerplate
 * then spaceships
 * then move it via keyboard
-* then planets and star
-* then collision
+* then planets and stars
+* then collisions
 * then sounds 
 
 --
@@ -67,7 +67,7 @@ output: index.html
 ### Smoother
 * used to generate boilerplate with yo
 * used to handle packages with bower
-* **but not not required**
+* **but not required**
 
 --
 
@@ -90,8 +90,6 @@ Serves Static Files
 
     make server
     
-See it at [http://127.0.0.1:8000](http://127.0.0.1:8000)
-
 --
 
 ### Result
@@ -142,7 +140,7 @@ bower install threex.spaceships
 ### Required ?
 
 * Optional
-* All free to pick another tech if you wish
+* Feel free to pick another tech if you wish
 * Faster to dev tho
 
 --
@@ -244,7 +242,7 @@ The Algo
 Pitfalls
 
 * async in spaceship loading
-* speed independant of fps
+* speed independent of fps
 
 --
 
@@ -414,7 +412,7 @@ Animate the moon and handle limits
 ### How ? with a *environmantal sphere*
 
 * Large Sphere
-* we are at it center
+* we are at its center
 * we see the inside of it
 * with a proper texture it does the tricks
 
@@ -424,7 +422,7 @@ Animate the moon and handle limits
 
 Part of threex.spaceships module
 
-<iframe src='http://127.0.0.1:8000/bower_components/threex.planets/examples/images/galaxy_starfield.png' width='100%' height='400px'></iframe>
+<iframe src='../bower_components/threex.planets/examples/images/galaxy_starfield.png' width='100%' height='400px'></iframe>
 
 --
 
@@ -476,7 +474,7 @@ a mesh
 ### Pitfalls
 
 * async model loading
-* spaceship isnt spheric
+* spaceship isn't spheric
 
 --
 
@@ -510,7 +508,7 @@ a mesh
 
 ### Use Web Audio API
 
-* low latency sound API for game
+* low latency sound API for games
 * [webaudiox.js](https://github.com/jeromeetienne/webaudiox) : bunch of helpers
 * heavily documented
 * Explosion Sound from [freesounds.org](http://www.freesound.org)
@@ -587,7 +585,7 @@ now files are in ```bower_components/webaudiox``` as usual
 
 --
 
-### Let's Pet our back
+### Let's Pat our back
 
 * pure html5 game
 * 3d models
