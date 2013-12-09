@@ -1,74 +1,193 @@
-title: Plan Slide 
-output: plan.html
+# Which content
+* a mini game called 'flying spaceship'
+* all in browser
+* three.js to get 3d
+* webaudio api to get sound
 
---
+# presentation
+* we will code this game
+* TODO put metrics of the final game
 
-### include threex spaceships
 
-* using require.js (optional, only for rapidity)
-  * META explain how to include it manually
-  * META do that for all included threex
-* using bower (optional only for rapidity)
-  * META all available on github
-  * META so can use zip or git itself, as you wish
 
---
+# Step 1 - lets install three.js boilerplate
 
-### threex.planets
+```
+mkdir flyingspaceship
+cd flyingspaceship
+yo threejs-boilerplate
+make server
+# goto http://127.0.0.1
+```
 
-* META Why ? what does it provide for us
-  * same for other threex
-* META 
-  * same for other threex
-* META what is it ? from threex page
-* META url for repo + demo
-* META iframe of earth demo
+# Step 2 - add spaceships
 
---
+```
+bower install threex.spaceships
+```
 
-### Whats next ?
+```
+require([ 'bower_components/threex.spaceships/package.require.js'
+	, 'bower_components/threex.spaceships/examples/vendor/three.js/examples/js/loaders/OBJMTLLoader.js'
+	, 'bower_components/threex.spaceships/examples/vendor/three.js/examples/js/loaders/OBJLoader.js'
+	, 'bower_components/threex.spaceships/examples/vendor/three.js/examples/js/loaders/MTLLoader.js'
+    	], function(){
+    // ...     
+});
+```
 
-* add sound with web audio api
-* add particles for collision
-* add particles for reactor
-* make star coming from the background
-* make more type of planets
+```
+THREEx.SpaceShips.loadSpaceFighter03(function(object3d){
+	scene.add(object3d)
+})
+```
 
---
+# step 6 - move spaceship with keyboard
 
-### Step By Steps
+```
+bower install threex.keyboardstate
+```
 
-1. run boilerplate
-1. add the spaceships
-1. Lets fill this void
-1. add the stars
-1. where is it ?
-1. remove the cube
-1. add the moon
-1. why is it black ?
-1. add the lights
-1. ok we got the moon but where is the spaceship ?
-1. put the spaceship in the proper place
-   * rotate it
-   * on the left
-1. nice... how to move the ships
-1. add threex.keyboardstate
-1. add a function in rendering loop
-   * what is a rendering loop
-1. use keyboard to make it move up and down
-1. oh an error... 
-1. lets wait until the spaceship is loaded
-1. lets use keyboard up/down arrow to make it move
-1. duh the spaceship can go out of the screen
-1. lets add limits
-1. nice... well the moon is kinda static.
-1. move the moon
-   * another function in the rendering loop
-1. make it warp
-1. yep too static
-1. make a random y for the moon on warp
-1. well...  cool but the spaceship and the moon
-1. lets have spaceship and moon to collide
-   * simple one based on distance
-   * no time for a explosion effect
-   * lets simply use color
+```
+require([ 'bower_components/threex.keyboardstate/package.require.js'
+    ], function(){
+    // ...     
+});
+```
+
+basic usage
+```
+    var keyboard  = new THREEx.KeyboardState();
+    if( keyboard.pressed("shift+H") ){
+        console.log('you are pressing shift and H')
+    }
+```
+
+```
+	var keyboard	= new THREEx.KeyboardState();
+	updateFcts.push(function(delta, now){
+		// only if the spaceship is loaded
+		if( spaceship === null )	return;
+		// set the speed
+		var speed	= 1;
+		// only if spaceships is loaded
+		if( keyboard.pressed('down') ){
+			spaceship.position.y	-= speed * delta;
+		}else if( keyboard.pressed('up') ){
+			spaceship.position.y	+= speed * delta;
+		}
+	})
+```
+
+# Step 4 - add planets
+
+
+```
+bower install threex.planets
+```
+
+```
+require([ 'bower_components/threex.planets/package.require.js'
+    ], function(){
+    // ...     
+});
+```
+
+```
+var moonMesh	= THREEx.Planets.createMoon()
+moonMesh.scale.multiplyScalar(0.5)
+scene.add(moonMesh)
+```
+
+# step 3 - add Stars
+
+```
+	var geometry	= new THREE.SphereGeometry(90, 32, 32)
+	var material	= new THREE.MeshBasicMaterial({
+		map	: THREE.ImageUtils.loadTexture('bower_components/threex.planets/examples/images/galaxy_starfield.png'),
+		side	: THREE.BackSide
+	})
+	var starSphere	= new THREE.Mesh(geometry, material)
+	scene.add(starSphere)
+```
+
+# Step 5 - move planets
+
+```
+	function resetMoon(){
+		moonMesh.position.x	= 5
+		moonMesh.position.x	+= 5 * (Math.random()-0.5)
+		moonMesh.position.y	= 2 * (Math.random()-0.5)		
+	}
+	resetMoon()
+```
+
+```	
+	updateFcts.push(function(delta, now){
+		// move the moon to the left
+		moonMesh.position.x	+= -1 * delta;
+		// make it warp
+		if( moonMesh.position.x < -3 )	resetMoon()
+	})
+```
+
+# step 7 - collision between planets and spaceship
+
+```
+	updateFcts.push(function(delta, now){
+		// only if the spaceship is loaded
+		if( spaceship === null )	return
+		// compute distance between spaceship and the moon
+		var distance	= moonMesh.position.distanceTo(spaceship.position)
+		if( distance < 0.3 ){
+			resetMoon()
+		}
+	})
+```
+
+# step 8 - add explosions sounds
+
+Init Web Audio
+
+```
+	var context	= new AudioContext()
+	var lineOut	= new WebAudiox.LineOut(context)
+	lineOut.volume	= 0.2
+```
+
+Load Sound
+
+```
+	var soundBuffer;
+	// load the sound
+	var soundUrl	= 'sounds/102720__sarge4267__explosion.wav'
+	WebAudiox.loadBuffer(context, soundUrl, function(buffer){
+		soundBuffer	= buffer
+	})
+```
+
+Function to play
+
+```
+	// setup a play function
+	function playExplosionSound(){
+		if( !soundBuffer )	return
+		var source	= context.createBufferSource()
+		source.buffer	= soundBuffer
+		source.connect(lineOut.destination)
+		source.start(0)
+		return source
+	}
+```
+
+Play Sound on contact
+
+```
+		var distance	= moonMesh.position.distanceTo(spaceship.position)
+		if( distance < 0.3 ){
+			resetMoon()
+			playExplosionSound()
+		}
+```
+
+# done
